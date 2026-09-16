@@ -1,0 +1,12 @@
+{
+  "id": "/",
+  "name": "Vestris",
+  "short_name": "Vestris",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#034346",
+  "theme_color": "#04534f",
+  "icons": [{"src": "/assets/vestris.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+}

@@ -1,0 +1,74 @@
+:root{color-scheme:dark;font-family:Arial,Helvetica,sans-serif;color:#fff;font-synthesis:none;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+html{min-height:100%;background:#034346;overflow-y:auto;overscroll-behavior-y:none}
+body{margin:0;min-width:280px;min-height:100vh;min-height:100svh;isolation:isolate;background:transparent;overscroll-behavior-y:none}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100vh;height:100lvh;z-index:-2;pointer-events:none;background:#034346 url('assets/toucan.svg') center center/cover no-repeat}
+body::after{content:"";position:fixed;top:0;left:0;width:100%;height:100vh;height:100lvh;z-index:-1;pointer-events:none;background:linear-gradient(180deg,transparent 25%,rgba(0,30,35,.04) 60%,rgba(0,30,35,.12))}
+.icon-library{position:absolute;width:0;height:0;overflow:hidden}
+.bio{width:min(100%,440px);min-height:100svh;margin:0 auto;padding:clamp(136px,21.5svh,210px) 20px max(44px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center}
+.profile{display:flex;flex-direction:column;align-items:center;margin-bottom:26px}
+.avatar{width:116px;height:116px;display:grid;place-items:center;border:2px solid rgba(255,255,255,.66);border-radius:50%;background:linear-gradient(135deg,#fffdf4,#f8fafb 75%);box-shadow:0 0 0 3px #ffffff28,0 8px 28px #002f4050,inset 0 1px 7px #fff;overflow:hidden}
+.avatar img{width:74px;height:83px;object-fit:contain}
+h1{font-size:20px;font-weight:600;letter-spacing:-.5px;margin:8px 0 0;text-shadow:0 2px 9px #003f4a99}
+.links{width:100%;display:grid;gap:18px}
+button,a.glass{font:inherit;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.glass{position:relative;isolation:isolate;border:1px solid rgba(238,255,252,.72);background:linear-gradient(115deg,rgba(238,255,255,.36),rgba(203,245,243,.13) 35%,rgba(226,255,239,.24) 100%);backdrop-filter:blur(13px) saturate(1.15);-webkit-backdrop-filter:blur(13px) saturate(1.15);box-shadow:inset 0 2px 3px #ffffff65,inset 0 -2px 5px #d4fff544,0 5px 16px #00383b24;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+.glass::before{content:"";pointer-events:none;position:absolute;inset:3px;border-radius:inherit;background:linear-gradient(145deg,#ffffff28,transparent 36%,transparent 70%);z-index:-1}
+.link{min-height:74px;border-radius:31px;display:grid;grid-template-columns:34px 1fr 20px;gap:19px;align-items:center;text-align:left;padding:13px 20px 13px 24px;text-shadow:0 1px 2px rgba(0,30,35,.4),0 2px 6px rgba(0,30,35,.25)}
+.link span{font-size:18px;line-height:1.22;font-weight:600;letter-spacing:-.5px}
+.icon,.arrow{display:block;width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.arrow{width:20px;height:24px;stroke-width:2.3}
+.filled{fill:currentColor;stroke-width:1}
+.socials{display:flex;gap:15px;justify-content:center;margin-top:43px}
+.social{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;padding:14px}
+.social .icon{width:31px;height:31px}
+.social[data-link="instagram"]{padding:0;display:flex;align-items:center;justify-content:center}
+.social[data-link="instagram"] .icon{width:35px;height:35px;flex-shrink:0}
+.social[data-link="youtube"]{padding:0;display:flex;align-items:center;justify-content:center}
+.social[data-link="youtube"] .icon{width:37px;height:37px;flex-shrink:0}
+.glass:focus-visible{outline:3px solid #ffe37a;outline-offset:5px}
+.glass:active{transform:scale(.97)}
+@media(hover:hover){.glass:hover{transform:translateY(-3px);background:linear-gradient(115deg,#efffff70,#cbf5f336,#e2ffef66);box-shadow:inset 0 2px 4px #ffffff80,0 8px 25px #00383b40}}
+@media(min-width:600px){.bio{padding-top:clamp(100px,18svh,180px);width:440px}.avatar{width:128px;height:128px}.avatar img{width:83px;height:93px}.link{min-height:80px}.profile{margin-bottom:32px}.links{gap:20px}h1{font-size:22px}.socials{margin-top:46px}}
+@media(max-width:360px){.bio{padding-left:16px;padding-right:16px}.link{padding-left:18px;padding-right:16px;gap:13px;grid-template-columns:30px 1fr 18px}.link span{font-size:16px}.icon{width:29px;height:29px}}
+@media(prefers-reduced-motion:reduce){.glass{transition:none}}
+/* The artwork fills the viewport; only interactive content respects safe areas. */
+.bio{min-height:100vh;min-height:100svh;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-bottom:max(32px,calc(env(safe-area-inset-bottom,0px) + 16px));padding-top:max(calc(env(safe-area-inset-top,0px) + 16px),clamp(136px,21.5svh,210px))}
+@media(max-width:360px){.bio{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+@media(orientation:landscape) and (max-height:600px){.bio{padding-top:calc(env(safe-area-inset-top,0px) + 24px)}}
+
+/* Keep the foreground inside the stable viewport, without page scrolling. */
+html,body{height:100%;min-height:0;overflow:hidden}
+.bio{position:fixed;top:0;left:50%;transform:translateX(-50%);height:100vh;height:100svh;min-height:0;justify-content:center;padding-top:max(16px,env(safe-area-inset-top,0px));padding-bottom:max(16px,env(safe-area-inset-bottom,0px))}
+.bio>*{flex-shrink:0}
+.glass:active,.glass:hover{transform:none}
+@media(max-height:740px){
+  .avatar{width:86px;height:86px}.avatar img{width:56px;height:63px}
+  .profile{margin-bottom:24px}h1{font-size:19px;margin-top:6px}
+  .links{gap:14px}.link{min-height:62px;padding-top:10px;padding-bottom:10px}
+  .link span{font-size:17px}.socials{margin-top:34px}
+}
+@media(max-height:580px){
+  .avatar{width:64px;height:64px}.avatar img{width:42px;height:47px}
+  .profile{margin-bottom:16px}h1{font-size:17px;margin-top:4px}
+  .links{gap:10px}.link{min-height:52px;padding-top:6px;padding-bottom:6px}
+  .link span{font-size:15px}.socials{margin-top:24px}.social{width:52px;height:52px;padding:9px}
+}
+/* Landscape layout follows the centered notebook reference. */
+@media(orientation:landscape){
+  body::before{background-image:url('assets/toucan-desktop.svg?v=13');background-position:center center;background-size:cover}
+  .bio{width:min(56vw,650px);display:flex;flex-direction:column;justify-content:center;padding: max(12px,env(safe-area-inset-top,0px)) 20px max(12px,env(safe-area-inset-bottom,0px));gap:0}
+  .profile{margin:0 0 clamp(8px,2.8svh,24px);align-self:center}
+  .avatar{width:clamp(42px,18svh,148px);height:clamp(42px,18svh,148px)}
+  .avatar img{width:65%;height:72%}
+  h1{font-size:clamp(12px,2.8svh,24px);line-height:1.15;margin-top:clamp(3px,1svh,8px)}
+  .links{gap:clamp(5px,1.9svh,17px)}
+  .link{min-height:clamp(32px,10.8svh,92px);padding:clamp(3px,1.2svh,10px) clamp(14px,2vw,28px);grid-template-columns:clamp(20px,5svh,40px) 1fr 20px;gap:clamp(12px,2vw,24px);border-radius:clamp(16px,4svh,32px)}
+  .link span{font-size:clamp(12px,3svh,22px);line-height:1.12}
+  .link .icon{width:clamp(20px,5svh,40px);height:clamp(20px,5svh,40px)}
+  .socials{margin-top:clamp(8px,3.2svh,29px);gap:clamp(10px,1.5vw,20px);align-self:center}
+  .social{width:clamp(30px,9.8svh,76px);height:clamp(30px,9.8svh,76px);padding:0;display:flex;align-items:center;justify-content:center}
+  .social .icon{width:50%;height:50%}
+  .social[data-link="instagram"] .icon{width:56%;height:56%}
+  .social[data-link="youtube"] .icon{width:60%;height:60%}
+}
