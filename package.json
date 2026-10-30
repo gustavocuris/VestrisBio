@@ -1,1 +1,11 @@
-{"name":"vestris-bio","version":"1.0.0","private":true,"description":"Landing page de links da Vestris","scripts":{"dev":"node server.mjs","start":"node server.mjs"}}
+{
+  "name": "vestris-bio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page de links da Vestris",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node build.mjs"
+  }
+}
